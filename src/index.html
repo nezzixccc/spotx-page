@@ -3,39 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpotX - Test</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #2d2d2d;
-            color: #f0f0f0;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            padding: 2em;
-            background-color: #3c3c3c; 
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-        }
-        h1 {
-            color: #ffffff;
-        }
-        p {
-            color: #cccccc; 
-        }
-        strong {
-            color: #ffffff; 
-        }
-    </style>
+    <title>SpotX - Ad Blocker for Spotify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, World! 👋</h1>
-    </div>
+    <div class="noise-overlay"></div>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">SpotX</span>
+                </div>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li><a href="#features" data-i18n="nav-features">Features</a></li>
+                        <li><a href="#platforms" data-i18n="nav-platforms">Platforms</a></li>
+                        <li><a href="#download" data-i18n="nav-download">Download</a></li>
+                    </ul>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ru">RU</button>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="glow-circle"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="reveal-text" data-i18n="hero-title">Listen to Spotify without ads</h1>
+                <p class="reveal-text" data-i18n="hero-subtitle">Spot-X is a universal ad blocker for the Spotify desktop application on Windows, Linux, and Mac</p>
+                <div class="cta-buttons reveal-element">
+                    <a href="#download" class="btn btn-primary" data-i18n="btn-download">Download for free</a>
+                    <a href="#features" class="btn btn-secondary" data-i18n="btn-learn-more">Learn more</a>
+                </div>
+            </div>
+            <div class="hero-image reveal-element">
+                <div class="spotify-mockup">
+                    <div class="browser-controls">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <img src="https://camo.githubusercontent.com/42d94a270485c8c1c1879593b51ea18900ccc5c455d29f53a312ec493b023384/68747470733a2f2f73706f74782d6f6666696369616c2e6769746875622e696f2f696d616765732f6c6f676f732f6c6f676f2e706e67" alt="Spot-X logo">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="section-blob"></div>
+        <div class="container">
+            <h2 class="section-title reveal-text" data-i18n="features-title">Spot-X Features</h2>
+            <div class="features-grid">
+                <div class="feature-card reveal-element">
+                    <div class="feature-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h3 data-i18n="feature1-title">Ad Blocking</h3>
+                    <p data-i18n="feature1-desc">Completely removes all ad breaks from your music stream</p>
+                </div>
+                <div class="feature-card reveal-element">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 data-i18n="feature2-title">Cross-platform</h3>
+                    <p data-i18n="feature2-desc">Works on all major operating systems — Windows, Linux, and Mac</p>
+                </div>
+                <div class="feature-card reveal-element">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3 data-i18n="feature3-title">Easy Installation</h3>
+                    <p data-i18n="feature3-desc">Simple installation process without complex settings</p>
+                </div>
+                <div class="feature-card reveal-element">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 data-i18n="feature4-title">Completely Free</h3>
+                    <p data-i18n="feature4-desc">No payments or subscriptions — use absolutely free</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="platforms" class="platforms">
+        <div class="floating-shapes">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title reveal-text" data-i18n="platforms-title">Supported Platforms</h2>
+            <div class="platforms-grid">
+                <div class="platform-card reveal-element">
+                    <div class="platform-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <h3 data-i18n="platform1-title">Windows</h3>
+                    <p data-i18n="platform1-desc">Compatible with Windows 10 and 11</p>
+                </div>
+                <div class="platform-card reveal-element">
+                    <div class="platform-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 data-i18n="platform2-title">macOS</h3>
+                    <p data-i18n="platform2-desc">Works on all current versions</p>
+                </div>
+                <div class="platform-card reveal-element">
+                    <div class="platform-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3 data-i18n="platform3-title">Linux</h3>
+                    <p data-i18n="platform3-desc">Support for popular distributions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="glow-circle-bottom"></div>
+        <div class="container">
+            <h2 class="section-title reveal-text" data-i18n="download-title">Download Spot-X</h2>
+            <p class="download-description reveal-text" data-i18n="download-desc">Choose the version for your operating system</p>
+            <div class="download-options">
+                <a href="https://github.com/SpotX-Official/SpotX/releases/download/1.9/Install_New_theme.bat" class="download-option reveal-element">
+                    <div class="download-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3 data-i18n="download-windows">Windows</h3>
+                        <span>v1.2.0</span>
+                    </div>
+                    <div class="download-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+                <a href="https://github.com/SpotX-Official/SpotX-Bash/archive/refs/heads/main.zip" class="download-option reveal-element">
+                    <div class="download-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3 data-i18n="download-macos">macOS</h3>
+                        <span>v1.2.0</span>
+                    </div>
+                    <div class="download-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+                <a href="https://github.com/SpotX-Official/SpotX-Bash/archive/refs/heads/main.zip" class="download-option reveal-element">
+                    <div class="download-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3 data-i18n="download-linux">Linux</h3>
+                        <span>v1.2.0</span>
+                    </div>
+                    <div class="download-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="github-link reveal-element">
+                <a href="https://github.com/SpotX-Official/SpotX">
+                    <i class="fab fa-github"></i>
+                    <span data-i18n="github-link">Source code on GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title reveal-text" data-i18n="how-works-title">How it works</h2>
+            <div class="steps">
+                <div class="step reveal-element">
+                    <div class="step-number">1</div>
+                    <h3 data-i18n="step1-title">Download</h3>
+                    <p data-i18n="step1-desc">Get Spot-X for your operating system</p>
+                </div>
+                <div class="step reveal-element">
+                    <div class="step-number">2</div>
+                    <h3 data-i18n="step2-title">Install</h3>
+                    <p data-i18n="step2-desc">Follow the simple installation instructions</p>
+                </div>
+                <div class="step reveal-element">
+                    <div class="step-number">3</div>
+                    <h3 data-i18n="step3-title">Enjoy</h3>
+                    <p data-i18n="step3-desc">Listen to music on Spotify without ads</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon"></div>
+                        <span class="logo-text">SpotX</span>
+                    </div>
+                    <p data-i18n="footer-description">A versatile ad-blocker designed for the Spotify desktop application</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3 data-i18n="footer-product">Product</h3>
+                        <ul>
+                            <li><a href="#features" data-i18n="nav-features">Features</a></li>
+                            <li><a href="#platforms" data-i18n="nav-platforms">Platforms</a></li>
+                            <li><a href="#download" data-i18n="nav-download">Download</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer-disclaimer">SpotX is not affiliated with Spotify AB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
